@@ -6,7 +6,6 @@
     <ImageView
         android:id="@+id/field_icon"
         android:layout_centerVertical="true"
-        android:background="@android:color/holo_blue_dark"
         android:layout_width="@dimen/avatar_size"
         android:layout_height="@dimen/avatar_size"/>
     
