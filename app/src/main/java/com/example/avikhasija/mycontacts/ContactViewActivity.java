@@ -3,6 +3,7 @@ package com.example.avikhasija.mycontacts;
 import android.graphics.Point;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -34,7 +35,21 @@ public class ContactViewActivity extends ActionBarActivity {
         Contact contact = (Contact) getIntent().getSerializableExtra(EXTRA);
         TextView contactName = (TextView)findViewById(R.id.contact_view_name);
         contactName.setText(contact.getName());
+
+        Toolbar toolbar = (Toolbar)findViewById(R.id.contact_view_toolbar);
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                int id = menuItem.getItemId();
+                if (id == R.id.contact_view_edit){
+                    return true;
+                }
+                return false;
+            }
+        });
+        toolbar.inflateMenu(R.menu.menu_contact_view);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
