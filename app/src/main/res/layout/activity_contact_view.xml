@@ -4,17 +4,26 @@
                 android:layout_height="match_parent"
                 tools:context="com.example.avikhasija.mycontacts.ContactViewActivity">
 
-    <ImageView
-        android:scaleType="centerCrop"
-        android:src="@drawable/landscape"
+    <RelativeLayout
+        android:id="@+id/contact_view_header"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        />
+        android:layout_height="200dp">
+        <ImageView
+            android:id="@+id/contact_view_image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/landscape"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
-    <TextView
-        android:id="@+id/contact_view_name"
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_alignParentBottom="true"
+            android:id="@+id/contact_view_name"
+            android:text="@string/hello_world"
+            android:layout_marginLeft="@dimen/vertical_small_margin"
+            android:textColor="@android:color/white"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
 
 </RelativeLayout>
