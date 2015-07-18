@@ -26,13 +26,14 @@ public class ContactListActivity extends ActionBarActivity {
         setContentView(R.layout.activity_contact_list);
 
         mContacts = new ArrayList<Contact>();
-        Contact contact1 = new Contact();
-        contact1.setName("Bob George");
-        mContacts.add(contact1);
 
         for (int i = 0; i < 30; i++) {
             Contact contactCopy = new Contact();
             contactCopy.setName("Bob George");
+            contactCopy.emails = new ArrayList<String >();
+            contactCopy.emails.add("bob@george.com");
+            contactCopy.phoneNumbers = new ArrayList<String >();
+            contactCopy.phoneNumbers.add("1234567890");
             mContacts.add(contactCopy);
         }
 
